@@ -1,0 +1,176 @@
+/* TÍTULO DE LA TABLA */
+caption {
+  caption-side: top;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #111111;
+  margin-bottom: 22px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* TABLA A ANCHO COMPLETO */
+table {
+  width: calc(100% - 40px);
+  margin: 0 20px 50px 20px;
+  font-family: Arial, sans-serif;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* CABECERA */
+thead {
+  background-color: #141414;
+  color: #ffffff;
+  border-bottom: 3px solid #f59e0b;
+}
+
+th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  border-bottom: 3px solid #f59e0b;
+}
+
+thead tr th:first-child {
+  border-top-left-radius: 13px;
+}
+
+thead tr th:last-child {
+  border-top-right-radius: 13px;
+}
+
+/* CELDAS Y FILAS */
+td {
+  padding: 13px 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #222222;
+  border-bottom: 1px solid #edf0f2;
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 13px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 13px;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+tbody tr:hover td {
+  background-color: #fef3c7;
+}
+
+/* DESTACAR AÑO Y NOMBRE DEL JUEGO */
+tbody tr td:nth-child(2) {
+  font-weight: bold;
+  color: #111111;
+}
+
+tbody tr td:nth-child(3) {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* IMÁGENES DE PORTADA */
+table img {
+  width: 66px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  display: block;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0 auto;
+}
+
+tbody tr:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.24);
+}
+
+/* RESPONSIVE SOLO TABLA */
+@media (max-width: 768px) {
+  caption {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
+  table {
+    width: calc(100% - 16px);
+    margin: 0 8px 36px 8px;
+    border-radius: 10px;
+  }
+
+  th {
+    padding: 6px 3px;
+    font-size: 0.62rem;
+    letter-spacing: 0;
+    white-space: normal;
+  }
+
+  td {
+    padding: 6px 3px;
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  table img {
+    width: 30px;
+    height: 42px;
+    border-radius: 4px;
+  }
+}
+
+/* RESPONSIVE SOLO TABLA - MÓVIL */
+@media (max-width: 576px) {
+  caption {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  table {
+    width: calc(100% - 10px);
+    margin: 0 5px 30px 5px;
+    border-radius: 8px;
+  }
+
+  th {
+    padding: 5px 2px;
+    font-size: 0.52rem;
+    letter-spacing: 0;
+    white-space: normal;
+  }
+
+  td {
+    padding: 5px 2px;
+    font-size: 0.56rem;
+    line-height: 1.15;
+  }
+
+  table img {
+    width: 24px;
+    height: 34px;
+    border-radius: 3px;
+  }
+}

@@ -1,0 +1,266 @@
+/* BLOQUE DE CURIOSIDADES */
+.curiosidades-bloque {
+  width: calc(100% - 40px);
+  margin: 40px 20px 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.curiosidades-bloque h2 {
+  font-size: 1.5rem;
+  color: #111111;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f59e0b;
+}
+
+/* FILA DE PORTADAS CENTRADA */
+.carrusel-pista {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 6px;
+  width: 100%;
+}
+
+.carrusel-pista::-webkit-scrollbar {
+  display: none;
+}
+
+.portada-card {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.portada-card:hover {
+  transform: translateY(-5px);
+  border-color: #f59e0b;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.portada-card.is-selected {
+  border-color: #f59e0b;
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35);
+}
+
+.portada-card img {
+  width: 115px;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TARJETA DESPLEGABLE */
+.panel-desplegable {
+  margin-top: 10px;
+}
+
+.detalle-juego {
+  display: relative;
+  gap: 24px;
+  align-items: center;
+  background-color: #141414;
+  color: #ffffff;
+  border: 1px solid #262626;
+  border-left: 5px solid #f59e0b;
+  border-radius: 14px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+
+  /* Estado cerrado por defecto */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  margin: 0;
+  border-width: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.35s ease,
+    padding 0.35s ease,
+    margin 0.35s ease;
+}
+
+.detalle-juego.is-open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 24px;
+  margin-top: 16px;
+  border-width: 1px;
+  border-left-width: 5px;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.detalle-juego[hidden] {
+  display: none;
+}
+
+.detalle-juego img {
+  width: 120px;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #3f3f46;
+  flex-shrink: 0;
+}
+
+.detalle-texto {
+  position: static;
+  flex: 1;
+  padding-right: 32px;
+}
+
+.detalle-texto h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anio-tag {
+  background-color: #f59e0b;
+  color: #111111;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.detalle-texto p {
+  margin-bottom: 8px;
+  line-height: 1.55;
+  color: #e5e7eb;
+}
+
+.detalle-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.detalle-texto strong {
+  color: #fbbf24;
+}
+
+.cerrar-detalle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: #262626;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cerrar-detalle:hover {
+  background-color: #f59e0b;
+  color: #111111;
+}
+
+/* RESPONSIVE CURIOSIDADES (TABLET Y MÓVIL) */
+@media (max-width: 768px) {
+  .curiosidades-bloque {
+    width: calc(100% - 20px);
+    margin: 24px 10px 16px 10px;
+    box-sizing: border-box;
+  }
+
+  .curiosidades-bloque h2 {
+    font-size: 1.3rem;
+  }
+
+  .carrusel-pista {
+    gap: 10px;
+    padding: 10px 2px;
+  }
+
+  .portada-card img {
+    width: 76px;
+    height: 106px;
+  }
+
+  .detalle-juego.is-open {
+    max-height: 1200px;
+    min-height: 460px;
+    padding: 24px 16px 28px 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .detalle-juego img {
+    width: 100px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .detalle-texto {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .detalle-texto h3 {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.15rem;
+    padding: 0 28px;
+  }
+
+  .detalle-texto p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+}
+
+/* AJUSTE FINO MÓVIL ESTRECHO */
+@media (max-width: 576px) {
+  .curiosidades-bloque {
+    width: calc(100% - 14px);
+    margin: 18px 7px 12px 7px;
+  }
+
+  .portada-card img {
+    width: 66px;
+    height: 92px;
+  }
+
+  .detalle-juego.is-open {
+    max-height: 1400px;
+    min-height: 500px;
+    padding: 20px 12px 24px 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .detalle-juego img {
+    width: 90px;
+    height: 126px;
+  }
+
+  .detalle-texto h3 {
+    font-size: 1.05rem;
+  }
+
+  .detalle-texto p {
+    font-size: 0.88rem;
+  }
+}

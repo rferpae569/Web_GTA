@@ -1,0 +1,144 @@
+/* CONTENEDOR GENERAL */
+#contenido-historia {
+  width: calc(100% - 64px);
+  margin: 50px 32px 75px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* FILA ALTERNADA: TEXTO - IMAGEN / IMAGEN - TEXTO */
+.historia-paso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 52px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.14);
+}
+
+.historia-paso:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.historia-paso.es-invertido {
+  flex-direction: row-reverse;
+}
+
+/* TEXTO */
+.historia-texto {
+  flex: 1 1 56%;
+}
+
+.paso-numero {
+  display: inline-block;
+  font-family: var(--fuente-titulo, Arial, sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--acento, #f59e0b);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.historia-texto h2 {
+  font-size: 1.85rem;
+  color: var(--texto-principal, #18181b);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--acento, #f59e0b);
+  line-height: 1.2;
+}
+
+.historia-texto p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--texto-secundario, #4b5563);
+  margin-bottom: 14px;
+}
+
+.historia-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.historia-texto strong {
+  color: var(--texto-principal, #18181b);
+}
+
+.paso-destacado {
+  margin-top: 16px;
+  padding-left: 16px;
+  border-left: 3px solid var(--acento, #f59e0b);
+  color: var(--texto-principal, #18181b);
+  font-weight: 500;
+}
+
+/* LISTA DEL TERCER BLOQUE */
+.lista-juegos-rockstar {
+  margin-top: 14px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-juegos-rockstar li {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--texto-secundario, #4b5563);
+}
+
+.lista-juegos-rockstar li::marker {
+  color: var(--acento, #f59e0b);
+  font-weight: bold;
+}
+
+/* IMÁGENES CUADRADAS/RECTANGULARES CON BORDER-RADIUS */
+.historia-imagen {
+  flex: 0 0 340px;
+}
+
+.historia-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
+
+/* RESPONSIVE HISTORIA */
+@media (max-width: 850px) {
+  #contenido-historia {
+    width: calc(100% - 32px);
+    margin: 32px 16px 50px 16px;
+    gap: 40px;
+  }
+
+  .historia-paso,
+  .historia-paso.es-invertido {
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 36px;
+  }
+
+  .historia-texto {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .historia-texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .historia-imagen {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .historia-imagen img {
+    width: 100%;
+    height: auto;
+  }
+}

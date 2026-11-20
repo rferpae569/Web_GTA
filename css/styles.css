@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES DE COLOR Y FUENTES */
+:root {
+  --fuente-titulo: "Oswald", Arial, sans-serif;
+  --fuente-cuerpo: "Inter", Arial, sans-serif;
+
+  --fondo-pagina: #eceae4;
+  --fondo-superficie: #f7f6f2;
+  --fondo-oscuro: #111111;
+  --fondo-oscuro-elevado: #191919;
+
+  --texto-principal: #18181b;
+  --texto-secundario: #4b5563;
+  --texto-claro: #ffffff;
+  --texto-muted-claro: #cccccc;
+
+  --acento: #f59e0b;
+  --acento-hover: #d97706;
+  --borde-suave: #d6d3cb;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  background-color: var(--fondo-pagina);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(245, 158, 11, 0.09), transparent 36%),
+    radial-gradient(circle at 88% 22%, rgba(17, 17, 17, 0.05), transparent 40%),
+    linear-gradient(180deg, #f1efe9 0%, #e7e4dc 100%);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+caption {
+  font-family: var(--fuente-titulo);
+  letter-spacing: 0.4px;
+}
+
+p {
+  color: var(--texto-principal);
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-claro);
+  border-bottom: 2px solid rgba(245, 158, 11, 0.35);
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.main-nav a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--acento);
+}
+
+/* FOOTER */
+.main-footer {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-muted-claro);
+  text-align: center;
+  padding: 25px 20px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  border-top: 3px solid var(--acento);
+}
+
+.main-footer p {
+  margin: 5px 0;
+  color: var(--texto-muted-claro);
+}
+
+/* RESPONSIVE GLOBAL (TABLET Y MÓVIL) */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .main-nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav a {
+    font-size: 0.98rem;
+  }
+
+  .main-footer {
+    padding: 20px 15px;
+    font-size: 0.85rem;
+  }
+}
+
