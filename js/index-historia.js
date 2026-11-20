@@ -5,10 +5,10 @@ async function incrustarHistoriaEnIndex() {
 
   try {
     // Solicita el archivo HTML del componente de historia de forma asíncrona
-    const respuesta = await fetch("/components/historia.html");
+    const respuesta = await fetch("components/historia.html");
     if (!respuesta.ok) {
       // Registra en consola si falla la petición HTTP (por ejemplo, archivo no encontrado)
-      console.error("No se pudo cargar /components/historia.html:", respuesta.status);
+      console.error("No se pudo cargar components/historia.html:", respuesta.status);
       return;
     }
 

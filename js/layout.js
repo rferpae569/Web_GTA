@@ -16,7 +16,7 @@ async function cargarComponente(selector, archivo) {
 }
 
 // Carga e inyecta el componente de cabecera en su contenedor correspondiente
-cargarComponente("#header-placeholder", "/components/header.html");
+cargarComponente("#header-placeholder", "components/header.html");
 
 // Carga e inyecta el componente de pie de página en su contenedor correspondiente
-cargarComponente("#footer-placeholder", "/components/footer.html");
+cargarComponente("#footer-placeholder", "components/footer.html");

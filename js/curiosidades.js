@@ -45,9 +45,9 @@ async function cargarCuriosidades() {
 
   try {
     // Solicita el archivo HTML de curiosidades de forma asíncrona
-    const respuesta = await fetch("/components/curiosidades.html");
+    const respuesta = await fetch("components/curiosidades.html");
     if (!respuesta.ok) {
-      console.error("No se pudo cargar /components/curiosidades.html:", respuesta.status);
+      console.error("No se pudo cargar components/curiosidades.html:", respuesta.status);
       return;
     }
 

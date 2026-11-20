@@ -5,10 +5,10 @@ async function incrustarCronologiaEnIndex() {
 
   try {
     // Pide de forma asíncrona el fragmento HTML del componente de cronología
-    const respuesta = await fetch("/components/cronologia.html");
+    const respuesta = await fetch("components/cronologia.html");
     if (!respuesta.ok) {
       // Si el servidor responde con error (ej. 404), lo registra y corta la ejecución
-      console.error("No se pudo cargar /components/cronologia.html:", respuesta.status);
+      console.error("No se pudo cargar components/cronologia.html:", respuesta.status);
       return;
     }
 
